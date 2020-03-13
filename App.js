@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Navigator from './android/routes';
 
 export default function App() {

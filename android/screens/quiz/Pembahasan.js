@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import latihanQuestion from '../../data/latihan';
 import ujianQuestion from '../../data/ujian';
-import {ebook} from '../../styles/colors';
-import {scale} from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { scale } from '../../utils/scaling';
 import storage from '../../utils/storage';
 
 export default class Pembahasan extends React.Component {
@@ -33,7 +33,6 @@ export default class Pembahasan extends React.Component {
         active: ujianQuestion,
       });
     }
-    ToastAndroid.show(String(id), ToastAndroid.SHORT);
   };
 
   render() {
@@ -45,6 +44,9 @@ export default class Pembahasan extends React.Component {
             backgroundColor={ebook.btnLogin}
             barStyle="light-content"
           />
+          <View style={styles.Header}>
+            <Text style={styles.title}>Quiz - Qada dan Qadar</Text>
+          </View>
           <View style={styles.mainContainer}>
             <View style={styles.content}>
               {materi &&

@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+/* eslint-disable prettier/prettier */
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -6,16 +7,15 @@ import {
   PixelRatio,
   Dimensions,
   TouchableOpacity,
-  StatusBar,
   ScrollView,
 } from 'react-native';
-import {ebook} from '../../styles/colors';
-import {scale} from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { scale } from '../../utils/scaling';
 import METRICS from '../../utils/metrics';
 import YouTube from 'react-native-youtube';
 import LogoMateri from '../../assets/svgs/Materi';
 
-export default function Materi({navigation}) {
+export default function Materi({ navigation }) {
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(null);
   const [isReady, setReady] = useState(true);
@@ -47,7 +47,10 @@ export default function Materi({navigation}) {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <View style={styles.mainContainer}>
+        <View style={styles.Header}>
+          <Text style={styles.title}>Materi Qada dan Qadar</Text>
+        </View>
         <YouTube
           ref={_youTubeRef}
           showinfo={show}
@@ -108,8 +111,25 @@ export default function Materi({navigation}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
+    alignItems: 'center',
+    backgroundColor: ebook.gray
+  },
+  Header: {
+    height: scale(70),
+    width: scale(350),
+    backgroundColor: ebook.logo,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: scale(10),
+    borderBottomLeftRadius: scale(14),
+    borderBottomRightRadius: scale(14)
+  },
+  title: {
+    fontSize: scale(24),
+    fontWeight: 'bold',
+    color: ebook.white
   },
   WebView: {
     flex: 1,

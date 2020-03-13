@@ -1,4 +1,5 @@
-import {createStackNavigator} from 'react-navigation-stack';
+// eslint-disable-next-line prettier/prettier
+import { createStackNavigator } from 'react-navigation-stack';
 import Home from '../screens/Home';
 import Login from '../screens/auth/Login';
 import Register from '../screens/auth/Register';
@@ -53,43 +54,43 @@ export const AppStack = createStackNavigator(
     Materi: {
       screen: Materi,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Pengertian: {
       screen: Pengertian,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Macam: {
       screen: Macam,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Ciri: {
       screen: Ciri,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Hikmah: {
       screen: Hikmah,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Quiz: {
       screen: Quiz,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Pembahasan: {
       screen: Pembahasan,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     Result: {

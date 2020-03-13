@@ -8,14 +8,17 @@ import {
   ScrollView,
 } from 'react-native';
 import IMAGES from '../../assets/image';
-import {ebook} from '../../styles/colors';
-import {scale} from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { scale } from '../../utils/scaling';
 
-export default function Ciri({navigation}) {
+export default function Ciri({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
         <StatusBar backgroundColor={ebook.btnLogin} barStyle="light-content" />
+        <View style={styles.Header}>
+          <Text style={styles.title}>Ciri-ciri</Text>
+        </View>
         <View>
           <Image source={IMAGES.materi1} style={styles.image} />
         </View>
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: ebook.white,
+    backgroundColor: ebook.grey,
   },
   image: {
     height: scale(230),
@@ -52,5 +55,19 @@ const styles = StyleSheet.create({
   text: {
     fontSize: scale(18),
     color: ebook.black,
+  },
+  Header: {
+    height: scale(70),
+    width: scale(350),
+    backgroundColor: ebook.logo,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: scale(14),
+    borderBottomRightRadius: scale(14)
+  },
+  title: {
+    fontSize: scale(24),
+    fontWeight: 'bold',
+    color: ebook.white
   },
 });

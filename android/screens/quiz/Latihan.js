@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View, StatusBar, ScrollView, StyleSheet} from 'react-native';
+import { Text, View, StatusBar, ScrollView, StyleSheet } from 'react-native';
 import latihaQuestion from '../../data/latihan';
-import {ebook} from '../../styles/colors';
-import {Button, ButtonContainer} from '../../components/Button';
-import {Alert} from '../../components/Alert';
-import {scale} from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { Button, ButtonContainer } from '../../components/Button';
+import { Alert } from '../../components/Alert';
+import { scale } from '../../utils/scaling';
 
 export default class Latihan extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ export default class Latihan extends React.Component {
   answer = correct => {
     this.setState(
       state => {
-        const nextState = {answered: true};
+        const nextState = { answered: true };
 
         if (correct) {
           nextState.correctCount = state.correctCount + 1;
@@ -81,6 +81,9 @@ export default class Latihan extends React.Component {
             {/* <View style={styles.Header}>
             <Text style={styles.title}>Quiz - Ujian</Text>
           </View> */}
+            <View style={styles.Header}>
+              <Text style={styles.title}>Quiz-Latihan</Text>
+            </View>
             <View style={styles.content}>
               <Text style={styles.text}>{question.question}</Text>
               <ButtonContainer>

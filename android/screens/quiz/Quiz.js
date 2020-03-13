@@ -1,9 +1,10 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import LogoQuiz from '../../assets/svgs/Quiz';
 import LogoUjian from '../../assets/svgs/Ujian';
-import {ebook} from '../../styles/colors';
-import {scale} from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { scale } from '../../utils/scaling';
 import METRICS from '../../utils/metrics';
 import latihanQuestion from '../../data/latihan';
 import ujianQuestion from '../../data/ujian';
@@ -35,6 +36,9 @@ export default class Quiz extends React.Component {
 
     return (
       <View style={styles.container}>
+        <View style={styles.Header}>
+          <Text style={styles.title}>Quiz - Qada dan Qadar</Text>
+        </View>
         <View style={styles.choose}>
           <TouchableOpacity style={styles.materi} onPress={_latihan}>
             <LogoQuiz style={styles.logo} />
@@ -44,10 +48,6 @@ export default class Quiz extends React.Component {
             <LogoUjian style={styles.logo} />
             <Text style={styles.text}>Ujian</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.materi} onPress={_toResult}>
-            <LogoUjian style={styles.logo} />
-            <Text style={styles.text}>Result</Text>
-          </TouchableOpacity>
         </View>
       </View>
     );
@@ -56,7 +56,23 @@ export default class Quiz extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: ebook.gray
+  },
+  Header: {
+    height: scale(70),
+    width: scale(350),
+    backgroundColor: ebook.logo,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: scale(14),
+    borderBottomRightRadius: scale(14)
+  },
+  title: {
+    fontSize: scale(24),
+    fontWeight: 'bold',
+    color: ebook.white
   },
   choose: {
     flex: 1,

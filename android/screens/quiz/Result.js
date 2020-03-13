@@ -1,14 +1,16 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   View,
   Text,
   AsyncStorage,
   StatusBar,
-  Button,
   StyleSheet,
 } from 'react-native';
-import {scale} from '../../utils/scaling';
-import {ebook} from '../../styles/colors';
+import { scale } from '../../utils/scaling';
+import { ebook } from '../../styles/colors';
+import { Button } from 'native-base';
+import { FONT_SIZE_BODY2 } from '../../styles';
 
 export default class Result extends React.Component {
   constructor(props) {
@@ -36,13 +38,13 @@ export default class Result extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor={ebook.btnLogin} barStyle="light-content" />
-        <View>
-          <Text>
+        <View style={styles.choose}>
+          <Text style={styles.great}>
             {point > 70 ? 'Hebat!, Selamat Ya' : 'Tetap Semangatt!!!'}
           </Text>
-          <View>
-            <Text>{result}</Text>
-            <Text>Skormu</Text>
+          <View style={styles.score}>
+            <Text style={styles.result}>{result}</Text>
+            <Text style={styles.point}>Skormu</Text>
           </View>
           <View style={styles.corwrong}>
             <View style={styles.correct}>
@@ -58,7 +60,14 @@ export default class Result extends React.Component {
               <Text style={styles.text}>Salah</Text>
             </View>
           </View>
-          <Button
+          <Button style={styles.btn} onPress={_toPembahasan}>
+            <Text style={styles.btnText}>Pembahasan</Text>
+          </Button>
+          <Button style={styles.register} onPress={_goHome}>
+            <Text style={styles.textRegister}>Kembali ke Home</Text>
+          </Button>
+
+          {/* <Button
             type="raised-ripple"
             title="Pembahasan"
             onPress={_toPembahasan}
@@ -70,7 +79,8 @@ export default class Result extends React.Component {
             title="Back to Home"
             onPress={_goHome}
             style={styles.btnHome}
-          />
+          /> */}
+
         </View>
       </View>
     );
@@ -183,6 +193,8 @@ const styles = StyleSheet.create({
     backgroundColor: ebook.btnLogin,
     borderRadius: scale(12),
     marginBottom: scale(10),
+    flexDirection: "row",
+    justifyContent: "center"
   },
   textBtn: {
     color: ebook.white,
@@ -197,6 +209,8 @@ const styles = StyleSheet.create({
     borderRadius: scale(12),
     borderColor: ebook.logo,
     borderWidth: scale(1),
+    flexDirection: "row",
+    justifyContent: "center"
   },
   textRegister: {
     color: ebook.btnLogin,
@@ -208,5 +222,10 @@ const styles = StyleSheet.create({
     height: scale(70),
     color: ebook.btnLogin,
     fontSize: scale(16),
+  },
+  btnText: {
+    fontWeight: 'bold',
+    color: 'white',
+    fontSize: FONT_SIZE_BODY2,
   },
 });

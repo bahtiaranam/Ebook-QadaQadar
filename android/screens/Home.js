@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   StyleSheet,
@@ -10,11 +11,11 @@ import {
 import Materi from '../assets/svgs/Materi';
 import Quiz from '../assets/svgs/Quiz';
 import IMAGES from '../assets/image';
-import {ebook} from '../styles/colors';
-import {scale} from '../utils/scaling';
+import { ebook } from '../styles/colors';
+import { scale } from '../utils/scaling';
 import METRICS from '../utils/metrics';
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
   const _toMateri = () => {
     navigation.navigate('Materi');
   };
@@ -27,8 +28,8 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       <StatusBar backgroundColor={ebook.btnLogin} barStyle="light-content" />
       <ImageBackground source={IMAGES.bgTitle} style={styles.Header}>
-        <Text>Materi</Text>
-        <Text>Qada dan Qadar</Text>
+        <Text style={styles.title}>Materi</Text>
+        <Text style={styles.title}> Qada dan Qadar</Text>
       </ImageBackground>
       <View style={styles.choose}>
         <TouchableOpacity style={styles.materi} onPress={_toMateri}>
